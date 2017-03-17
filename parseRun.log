@@ -1,0 +1,56 @@
+Script started on Fri Mar 17 16:46:56 2017
+[?1034hbash-3.2$ ls -la
+total 2336
+drwxr-xr-x  15 razarauf  staff     510 17 Mar 16:46 .
+drwxr-xr-x@  8 razarauf  staff     272 17 Mar 16:46 ..
+-rw-r--r--@  1 razarauf  staff    6148 17 Mar 16:46 .DS_Store
+drwxr-xr-x  16 razarauf  staff     544 17 Mar 14:45 .git
+-rw-r--r--   1 razarauf  staff  165808 17 Mar 16:36 Archive.zip
+-rw-r--r--@  1 razarauf  staff   81672 17 Mar 14:24 CANUE programming task and questions.pdf
+-rw-r--r--   1 razarauf  staff     983 17 Mar 00:50 README.md
+-rw-r--r--@  1 razarauf  staff  546188 13 Mar 09:43 VOC12015.csv
+-rw-r--r--@  1 razarauf  staff  239264 13 Mar 09:43 VOC42015.csv
+-rw-r--r--@  1 razarauf  staff  120165 13 Mar 09:43 VOC82015.csv
+-rw-r--r--@  1 razarauf  staff    1112 17 Mar 16:38 output.txt
+-rw-r--r--@  1 razarauf  staff    3444 17 Mar 16:45 parse.py
+-rw-r--r--   1 razarauf  staff      43 17 Mar 16:46 parseRun.log
+-rw-r--r--@  1 razarauf  staff    1467 17 Mar 16:30 parseTest.py
+-rw-r--r--@  1 razarauf  staff    2007 16 Mar 21:43 test.csv
+bash-3.2$ pa[K[Kpython parse.py 
+filename:VOC12015.csv
+Total records: 6797
+Number and percent of valid records 5862, 86.244 %
+Number and percent of records with negative values 179, 2.634 %
+Number and percent of records with missing values 756, 11.123 %
+Min of valid values: 0.00039
+Max of valid values: 0.744916
+10th percentile of valid values: 0.0750
+50th percentile of valid values: 0.2015
+90th percentile of valid values: 0.3544
+
+filename:VOC42015.csv
+Total records: 3008
+Number and percent of valid records 2378, 79.056 %
+Number and percent of records with negative values 262, 8.710 %
+Number and percent of records with missing values 368, 12.234 %
+Min of valid values: 0.000166
+Max of valid values: 0.737513
+10th percentile of valid values: 0.0476
+50th percentile of valid values: 0.1785
+90th percentile of valid values: 0.3554
+
+filename:VOC82015.csv
+Total records: 1500
+Number and percent of valid records 1476, 98.400 %
+Number and percent of records with negative values 24, 1.600 %
+Number and percent of records with missing values 0, 0.000 %
+Min of valid values: 0.000592
+Max of valid values: 0.759368
+10th percentile of valid values: 0.1045
+50th percentile of valid values: 0.2717
+90th percentile of valid values: 0.4564
+
+bash-3.2$ exit
+exit
+
+Script done on Fri Mar 17 16:47:12 2017

@@ -49,8 +49,8 @@ def printSummaryTable (filename, numOfValidRecords, numOfNegRecords, numOfMissin
 	print "filename:" + filename
 	print 'Total records: ' + str(totalRecords)
 	print ('Number and percent of valid records %i, %.3f %%' % (numOfValidRecords, percentOfValidRecords))
-	print ('Number and percent of valid records %i, %.3f %%' % (numOfNegRecords, percentOfNegative))
-	print ('Number and percent of valid records %i, %.3f %%' % (numOfMissing, percentOfMissing))
+	print ('Number and percent of records with negative values %i, %.3f %%' % (numOfNegRecords, percentOfNegative))
+	print ('Number and percent of records with missing values %i, %.3f %%' % (numOfMissing, percentOfMissing))
 	print 'Min of valid values: ' + str ( min (aryOfValidRecords))
 	print 'Max of valid values: ' + str ( max (aryOfValidRecords))
 	# 10% of the valid data lied below: 
@@ -58,8 +58,22 @@ def printSummaryTable (filename, numOfValidRecords, numOfNegRecords, numOfMissin
 	print ('50th percentile of valid values: %.4f' % float ( numpy.percentile(aryOfValidRecords, 50)))
 	print ('90th percentile of valid values: %.4f' % float ( numpy.percentile(aryOfValidRecords, 90)))
 	print 
+
+def writeToFile (listToWrite, filename): 
+	listToWrite.insert (0, ['Date start:', 'Time start:', 'Date end:', 'Time end:','Time zone:', 'Trip ID','Latitude:','Longitude:','VOC_ppbv:', 'Data flag:'])
+	fileWriterHelper (listToWrite, filename, False)
+
+
+def mergeFiles (listToWrite, filename, fileNumber): 
+	if fileNumber == 1: 
+		listToWrite.insert (0, ['Date start:', 'Time start:', 'Date end:', 'Time end:','Time zone:', 'Trip ID','Latitude:','Longitude:','VOC_ppbv:', 'Data flag:'])
+	fileWriterHelper (listToWrite, filename, True)
 	
-# def writeToFile (listToWrite, filename): 
+
+def fileWriterHelper (listToWrite, filename, append):
+	with open (filename, 'wb' if append==False else 'ab') as csvfile: 
+		writer = csv.writer(csvfile)
+		writer.writerows(listToWrite)
 
 def main (): 
 	listOfFiles = ['VOC12015.csv', 'VOC42015.csv', 'VOC82015.csv']
@@ -68,12 +82,16 @@ def main ():
 	numOfNegRecords = 0
 	numOfMissing = 0
 	totalRecords = 0
+	fileNumber = 0
 	aryOfValidRecords = []
 
 	for eachFile in listOfFiles:
+		fileNumber = fileNumber + 1
 		fileList = readFile(eachFile)
-		fileList[0] = ['Date start:', 'Time start:', 'Date end:', 'Time end:','Time zone:','Latitude:','Longitude:','VOC_ppbv:', 'Data flag:']
+		
 		parseList (eachFile, fileList[1:])
+		writeToFile (fileList[1:], eachFile)
+		mergeFiles (fileList[1:], "mergedData.csv", fileNumber)
 
 
 # This is the standard boilerplate that calls the main() function.
