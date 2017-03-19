@@ -1,0 +1,32 @@
+filename:VOC12015.csv
+Total records: 6797
+Number and percent of valid records 5862, 86.244 %
+Number and percent of valid records 179, 2.634 %
+Number and percent of valid records 756, 11.123 %
+Min of valid values: 0.00039
+Max of valid values: 0.744916
+10th percentile of valid values: 0.0750
+50th percentile of valid values: 0.2015
+90th percentile of valid values: 0.3544
+
+filename:VOC42015.csv
+Total records: 3008
+Number and percent of valid records 2378, 79.056 %
+Number and percent of valid records 262, 8.710 %
+Number and percent of valid records 368, 12.234 %
+Min of valid values: 0.000166
+Max of valid values: 0.737513
+10th percentile of valid values: 0.0476
+50th percentile of valid values: 0.1785
+90th percentile of valid values: 0.3554
+
+filename:VOC82015.csv
+Total records: 1500
+Number and percent of valid records 1476, 98.400 %
+Number and percent of valid records 24, 1.600 %
+Number and percent of valid records 0, 0.000 %
+Min of valid values: 0.000592
+Max of valid values: 0.759368
+10th percentile of valid values: 0.1045
+50th percentile of valid values: 0.2717
+90th percentile of valid values: 0.4564
